@@ -1,0 +1,663 @@
+/*------------------------------------*\
+#FONTS
+\*------------------------------------*/
+
+@font-face {
+    font-family: "SourceSantPro-Regular";
+    src: url(../fonts/SourceSansPro-Regular.ttf);
+}
+
+
+
+/*------------------------------------*\
+#Variables
+\*------------------------------------*/
+
+:root {
+    /* colors */
+    --global-color-LightBlue: #d9e6ff;
+    --global-color-DarkBlue: #1F2E4D;
+
+    --global-color-front-day: var(--global-color-DarkBlue);
+    --global-color-background-day: var(--global-color-LightBlue);
+
+    --global-color-front-night: var(--global-color-LightBlue);
+    --global-color-background-night: var(--global-color-DarkBlue);
+
+    /* opacity */
+
+    /* transitions */
+
+    --global-color-alpha-light: #4F95FF;
+    --global-color-alpha: #3385FF;
+    --global-color-alpha-dark: #2E77E6;
+    --global-color-alpha-x-dark: #1B4186;
+    --global-color-alpha-transparent: #3385ffbf;
+    --global-color-alpha-x-transparent: #3385ff4d;
+
+    --global-color-neutral-xxxx-light: #F5F6FA;
+    --global-color-neutral-xxx-light: #E2E3E7;
+    --global-color-neutral-xx-light: #caccd4;
+    --global-color-neutral-x-light: #b5b6c0;
+    --global-color-neutral-light: #a0a1ad;
+    --global-color-neutral: #8b8c9a;
+    --global-color-neutral-dark: #757787;
+    --global-color-neutral-x-dark: #606274;
+    --global-color-neutral-xx-dark: #4b4c60;
+    --global-color-neutral-xxx-dark: #35374d;
+    --global-color-neutral-xxxx-dark: #20223a;
+    /* border stuff */
+    --global-borderRadius: 3px;
+    --global-borderWidth: 1px;
+    
+    /* transitions */
+    --global-transitionTiming-alpha: .1s ease-out;
+    
+    /* Baseline settings */
+    --global-baseline: 8px;         
+    --global-whitespace: calc(var(--global-baseline) * 3); /* = 24px */
+    
+    --global-whitespace-xs: calc(var(--global-baseline) / 2); /* = 4px */
+    --global-whitespace-sm: calc(var(--global-baseline) * 1); /*  = 8px */
+    --global-whitespace-md: calc(var(--global-baseline) * 2); /*  = 16px */
+    --global-whitespace-lg: calc(var(--global-baseline) * 4); /*  = 32px */
+    --global-whitespace-xl: calc(var(--global-whitespace) * 2); /*  = 48px */
+    --global-whitespace-xxl: calc(var(--global-whitespace) * 3); /*  = 72px */
+    
+    
+    --global-input-backgroundColor: White;
+    --global-input-color: var(--global-color-neutral-xxxx-dark);
+    --global-input-borderColor: var(--global-color-neutral-xxx-light);
+    --global-input-hover-borderColor: #81ADF0;
+    --global-input-focus-borderColor: var(--global-color-alpha);
+    --global-input-boxShadow: 0 0 0 3px var(--global-color-alpha-x-transparent);
+
+    --global-EuropeBlue: #003399;
+}
+
+/*------------------------------------*\
+#GENERIC
+\*------------------------------------*/
+
+/*
+    Generic: Page
+    ---
+    Global page styles + universal box-sizing:
+*/
+
+html {
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "SourceSantPro-Regular", Helvetica, arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+
+
+}
+
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/*
+* Remove text-shadow in selection highlight:
+* https://twitter.com/miketaylr/status/12228805301
+*
+* Customize the background color to match your design.
+*/
+
+::-moz-selection {
+    background: red;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background: red;
+    color: white;
+    text-shadow: none;
+}
+
+/*------------------------------------*\
+#Elements
+\*------------------------------------*/
+
+/*
+Elements: Images
+---
+Default markup for images to make them responsive
+*/
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 48px;
+    margin: 0 0 24px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 24px;
+}
+
+h3 {
+    font-size: 26px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+    margin: 0 0 24px;
+}
+
+ul,
+ol {
+    padding-left: 24px;
+}
+
+li ul,
+li ol {
+    margin-bottom: 0;
+}
+
+blockquote {
+    font-style: normal;
+    font-size: 23px;
+    line-height: 32px;
+    margin: 0 0 24px;
+}
+
+blockquote * {
+    font-size: inherit;
+    line-height: inherit;
+}
+
+figcaption {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 8px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: LightGrey;
+    margin: 0 0 24px;
+}
+
+a {
+    color: red;
+    outline-color: red;
+    outline-width: medium;
+    outline-offset: 2px;
+}
+
+a:visited,
+a:active {
+    color: red;
+}
+
+a:hover,
+a:focus {
+    color: red;
+}
+
+label,
+input {
+    display: block;
+}
+
+select {
+    width: 100%;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+
+    background-color: var(--global-color-background-day);
+    color: var(--global-color-front-day);
+}
+
+body.dark-theme {
+    background-color:   var(--global-color-background-night) ;
+    
+    color:  var(--global-color-front-night);
+}
+
+
+/*------------------------------------*\
+#OBJECTS
+\*------------------------------------*/
+
+/*
+    Object: Button reset
+    ---
+    Small button reset object
+*/
+
+.o-button-reset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+/*
+    Object: Hide accessible
+    ---
+    Accessibly hide any element
+*/
+
+.o-hide-accessible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/*------------------------------------*\
+#COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Logo
+    ---
+    Website main logo
+*/
+
+.c-logo {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+}
+
+.c-ukraineheart {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 8px;
+}
+
+
+
+/*
+    Component: App
+    ---
+    Main app wrapper
+*/
+
+.c-app {
+    max-width: 400px;
+}
+
+.c-app__totalrefugees {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid var(--global-color-front-day);
+    font-size: 17;
+    padding-bottom: 8px;
+
+    width: 400px;
+}
+
+.c-app__totalrefugees--symbol {
+    width: 400px;
+    height: 200px;
+}
+
+.c-app__summary {
+    margin-top: 8px;
+}
+
+.c-app__summary--item {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-app__footer {
+    width: 400px;
+    height: 88px;
+
+    margin-top: 72px;
+}
+
+
+/* Progressbar animation */
+
+.c-app__progressbar {
+    position: relative;
+    background-color: var(--global-EuropeBlue);
+    -webkit-mask: url(../img/svg/refugees.svg) left / cover;
+}
+
+.c-app__progressbar IMG {
+    visibility: hidden;
+}
+
+.progress-bg {
+    background-color: gray;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-name: to30percent;
+    -webkit-animation-fill-mode: forwards;
+    animation-duration: 1s;
+    animation-name: to30percent;
+    animation-fill-mode: forwards;
+}
+
+
+  
+
+/* option input for checkboxes and radio buttons */
+
+
+.c-option-list{
+    margin-bottom: 24px;
+}
+
+.c-option-list__item {
+    margin-bottom: 12px;
+}
+
+.c-option {
+    margin-right: var(--global-whitespace-sm);
+}
+
+.c-option--hidden:checked + .c-custom-option .c-custom-option__symbol {
+    opacity: 1;
+
+    transition: opacity 0.5s;
+}
+
+.c-custom-option {
+    display: flex;
+}
+
+.c-custom-option__fake-input {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+
+    border: var(--global-borderWidth) solid var(--global-input-borderColor)
+}
+
+.c-custom-option__fake-input:hover {
+    border-color: var( --global-input-hover-borderColor);
+    box-shadow: var(--global-input-boxShadow);
+}
+
+.c-custom-option__fake-input--checkbox {
+    border-radius:  var(--global-borderRadius);
+}
+
+.c-custom-option__fake-input--radio {
+    border-radius:  100%;
+}
+
+.c-custom-option__symbol {
+    display: block;
+}
+
+
+.c-custom-option__fake-input--radio .c-custom-option__symbol {
+    opacity: 0;
+    transition: opacity var(--global-transitionTiming-alpha);
+    height: 6px;
+    width: 6px;
+
+    background-color: var(--global-color-alpha);
+    border-radius: 100%;
+}
+
+.c-custom-option__fake-input--checkbox .c-custom-option__symbol {
+    opacity: 0;
+    transition: opacity var(--global-transitionTiming-alpha);
+    height: 10px;
+    width: 10px;
+
+    fill: var(--global-color-alpha);
+}
+
+
+/*
+    Component: Custom Toggle
+    ---
+    Custom toggle Checkbox
+*/
+
+.c-custom-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 165px;
+}
+
+
+.c-custom-toggle__fake-input {
+    --custom-toggle__fake-input-BackgroundColor: var(--global-color-neutral-xxxx-light);
+    
+    display: flex;
+    align-items: center;
+
+    width: 48px;
+    height: 24px;
+    margin-right: 0px;
+    border-radius: 24px;
+
+    border: var(--global-borderWidth) solid var(--global-input-borderColor);
+    background-color:   var(--custom-toggle__fake-input-BackgroundColor);
+    
+}
+
+.c-custom-toggle__fake-input::after {
+    transition: all var(--global-transitionTiming-alpha);
+    content: "";
+    display: block;
+
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+
+    border: calc(var(--global-borderWidth) / 2) solid var(--global-input-borderColor);
+    box-shadow: 0 0 0 1px #00000009;
+    background-color:   #FFFFFF;
+}
+
+.c-option--hidden:checked +  .c-custom-toggle .c-custom-toggle__fake-input::after {
+    transform: translateX(24px);
+
+
+
+}
+
+.c-option--hidden:checked +  .c-custom-toggle .c-custom-toggle__fake-input {
+    transition: all var(--global-transitionTiming-alpha);
+    
+    background-color: var(--global-color-alpha);
+    border-color: var(--global-color-alpha-dark);
+
+}
+
+.c-custom-toggle__fake-input:hover {
+    border-color: var( --global-input-hover-borderColor);
+    box-shadow: var(--global-input-boxShadow);
+}
+
+.c-toggle-list__item {
+    margin-bottom: 12px;
+}
+
+.c-toggle-list__item + .c-toggle-list__item {
+    padding-top: 12px;
+    margin-bottom: 12px;
+
+    border-top: var(--global-borderWidth) solid var(--global-color-neutral-xxx-light);
+}
+
+
+
+
+
+/*------------------------------------*\
+#UTILITIES
+\*------------------------------------*/
+
+/*
+    Utilities: Mute
+    Mute with opacity
+*/
+
+/*------------------------------------*\
+#STATES
+\*------------------------------------*/
+
+/*
+    Change the theme using CSS vars.
+*/
+
+/* Night version: just switch the light and dark vars */
+
+/*------------------------------------*\
+#MEDIA
+\*------------------------------------*/
+
+/*
+    Print styles.
+    ---
+    Inlined to avoid the additional HTTP request:
+    http://www.phpied.com/delay-loading-your-print-css/
+*/
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+        http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+    * Don't show links that are fragment identifiers,
+    * or use the `javascript:` pseudo protocol
+    */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre {
+        white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+    * Printing Tables:
+    * http://css-discuss.incutio.com/wiki/Printing_Tables
+    */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
